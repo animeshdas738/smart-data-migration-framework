@@ -2,22 +2,16 @@
     <lightning-card title="New Migration Job" icon-name="standard:data_model">
         <div class="slds-card__body slds-card__body_inner">
 
-            <!-- Step indicator -->
-            <div class="slds-progress slds-progress_shade slds-m-bottom_medium">
-                <ol class="slds-progress__list">
-                    <template for:each={progressSteps} for:item="step">
-                        <li key={step.value}
-                            class={step.cssClass}>
-                            <button class="slds-button slds-progress__marker" type="button">
-                                <span class="slds-assistive-text">{step.label}</span>
-                            </button>
-                            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
-                                <span class="slds-text-body_small">{step.label}</span>
-                            </div>
-                        </li>
-                    </template>
-                </ol>
-            </div>
+            <!-- SLDS Path step indicator -->
+            <lightning-progress-indicator
+                current-step={currentStepValue}
+                type="path"
+                class="slds-m-bottom_medium">
+                <lightning-progress-step label="Job"     value="0"></lightning-progress-step>
+                <lightning-progress-step label="Objects" value="1"></lightning-progress-step>
+                <lightning-progress-step label="Fields"  value="2"></lightning-progress-step>
+                <lightning-progress-step label="Review"  value="3"></lightning-progress-step>
+            </lightning-progress-indicator>
 
             <!-- Spinner -->
             <template if:true={isLoading}>

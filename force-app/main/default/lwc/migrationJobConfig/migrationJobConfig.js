@@ -34,16 +34,7 @@ export default class MigrationJobConfig extends LightningElement {
     get isLastStep()   { return this.currentStep === STEPS.length - 1; }
     get isFirstStep()  { return this.currentStep === 0; }
 
-    get progressSteps() {
-        return STEPS.map((label, i) => ({
-            label,
-            value: String(i),
-            isActive: i === this.currentStep,
-            cssClass: i === this.currentStep
-                ? 'slds-progress__item slds-is-active'
-                : 'slds-progress__item',
-        }));
-    }
+    get currentStepValue() { return String(this.currentStep); }
 
     get launchLabel() {
         return this.isDryRun ? 'Start Dry Run' : 'Launch Migration';
