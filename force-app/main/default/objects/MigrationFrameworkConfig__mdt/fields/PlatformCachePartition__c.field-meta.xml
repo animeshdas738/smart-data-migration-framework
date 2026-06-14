@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PlatformCachePartition__c</fullName>
+    <description>API name of the Platform Cache partition used to store parent ID maps. Must be an existing Org Cache partition. Example: local.MigrationCache</description>
+    <externalId>false</externalId>
+    <label>Platform Cache Partition</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+</CustomField>

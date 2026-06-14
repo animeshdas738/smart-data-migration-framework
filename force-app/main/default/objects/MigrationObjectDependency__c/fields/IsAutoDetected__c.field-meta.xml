@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsAutoDetected__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True when this dependency was derived from a Salesforce DescribeSObject call. False when manually configured or seeded from MigrationObjectRule__mdt.</description>
+    <externalId>false</externalId>
+    <label>Auto Detected</label>
+    <type>Checkbox</type>
+</CustomField>

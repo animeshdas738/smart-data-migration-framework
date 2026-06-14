@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DependencyType__c</fullName>
+    <externalId>false</externalId>
+    <label>Dependency Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MasterDetail</fullName>
+                <default>false</default>
+                <label>Master-Detail</label>
+            </value>
+            <value>
+                <fullName>Lookup</fullName>
+                <default>true</default>
+                <label>Lookup</label>
+            </value>
+            <value>
+                <fullName>SelfReference</fullName>
+                <default>false</default>
+                <label>Self Reference</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

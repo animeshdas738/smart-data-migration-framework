@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TargetFieldType__c</fullName>
+    <description>Salesforce field data type. Copied from DescribeFieldResult at config time. Drives the validation engine type-coercion logic.</description>
+    <externalId>false</externalId>
+    <label>Target Field Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value><fullName>Text</fullName><default>false</default><label>Text</label></value>
+            <value><fullName>TextArea</fullName><default>false</default><label>Text Area</label></value>
+            <value><fullName>LongTextArea</fullName><default>false</default><label>Long Text Area</label></value>
+            <value><fullName>Number</fullName><default>false</default><label>Number</label></value>
+            <value><fullName>Currency</fullName><default>false</default><label>Currency</label></value>
+            <value><fullName>Percent</fullName><default>false</default><label>Percent</label></value>
+            <value><fullName>Date</fullName><default>false</default><label>Date</label></value>
+            <value><fullName>DateTime</fullName><default>false</default><label>Date/Time</label></value>
+            <value><fullName>Boolean</fullName><default>false</default><label>Checkbox</label></value>
+            <value><fullName>Picklist</fullName><default>false</default><label>Picklist</label></value>
+            <value><fullName>MultiPicklist</fullName><default>false</default><label>Multi-Select Picklist</label></value>
+            <value><fullName>Lookup</fullName><default>false</default><label>Lookup</label></value>
+            <value><fullName>MasterDetail</fullName><default>false</default><label>Master-Detail</label></value>
+            <value><fullName>Email</fullName><default>false</default><label>Email</label></value>
+            <value><fullName>Phone</fullName><default>false</default><label>Phone</label></value>
+            <value><fullName>URL</fullName><default>false</default><label>URL</label></value>
+            <value><fullName>Id</fullName><default>false</default><label>ID</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

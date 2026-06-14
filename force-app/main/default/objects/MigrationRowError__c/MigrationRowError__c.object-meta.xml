@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Row-level error record. Covers pre-validation failures (Phase=PreValidation) and DML partial failures (Phase=DML). Source of the field-by-field, row-by-row error report.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <label>Migration Row Error</label>
+    <nameField>
+        <displayFormat>ERR-{000000}</displayFormat>
+        <label>Error Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Migration Row Errors</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

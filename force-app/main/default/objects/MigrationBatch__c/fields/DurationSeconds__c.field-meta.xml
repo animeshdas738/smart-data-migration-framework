@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DurationSeconds__c</fullName>
+    <description>Wall-clock time for this batch in seconds. Salesforce stores DateTime differences in days; multiplying by 86400 converts to seconds.</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(NOT(ISNULL(CompletedAt__c)), NOT(ISNULL(StartedAt__c))), (CompletedAt__c - StartedAt__c) * 86400, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Duration (Seconds)</label>
+    <precision>18</precision>
+    <scale>1</scale>
+    <type>Number</type>
+</CustomField>

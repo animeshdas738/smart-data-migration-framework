@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RowNumber__c</fullName>
+    <description>Absolute row number in the source dataset for this object (1-based). Maps directly to a row in the source CSV or extract. Used by the client to locate and fix the row.</description>
+    <externalId>false</externalId>
+    <label>Row Number</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

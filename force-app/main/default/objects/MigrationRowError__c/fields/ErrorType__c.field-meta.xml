@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ErrorType__c</fullName>
+    <externalId>false</externalId>
+    <label>Error Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>RequiredFieldMissing</fullName><default>false</default><label>Required Field Missing</label></value>
+            <value><fullName>FieldTooLong</fullName><default>false</default><label>Field Too Long</label></value>
+            <value><fullName>InvalidPicklistValue</fullName><default>false</default><label>Invalid Picklist Value</label></value>
+            <value><fullName>InvalidFieldType</fullName><default>false</default><label>Invalid Field Type</label></value>
+            <value><fullName>DuplicateExternalId</fullName><default>false</default><label>Duplicate External ID</label></value>
+            <value><fullName>ParentRecordNotFound</fullName><default>false</default><label>Parent Record Not Found</label></value>
+            <value><fullName>RecordTypeNotFound</fullName><default>false</default><label>Record Type Not Found</label></value>
+            <value><fullName>DMLError</fullName><default>false</default><label>DML Error</label></value>
+            <value><fullName>UnmappedField</fullName><default>false</default><label>Unmapped Source Field</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

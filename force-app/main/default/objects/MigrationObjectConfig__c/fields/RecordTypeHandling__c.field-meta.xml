@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecordTypeHandling__c</fullName>
+    <description>Controls how RecordType is resolved from source data. DeveloperName: source contains the RecordType developer name, resolved to Id at load time. StaticId: a single RecordTypeId is applied to all rows. None: RecordType is not set.</description>
+    <externalId>false</externalId>
+    <label>Record Type Handling</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>DeveloperName</fullName>
+                <default>false</default>
+                <label>Developer Name</label>
+            </value>
+            <value>
+                <fullName>StaticId</fullName>
+                <default>false</default>
+                <label>Static ID</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

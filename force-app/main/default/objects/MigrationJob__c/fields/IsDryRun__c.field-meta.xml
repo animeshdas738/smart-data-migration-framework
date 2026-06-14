@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsDryRun__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When true, the full validation pipeline runs and produces a complete error report with zero DML committed to the target org.</description>
+    <externalId>false</externalId>
+    <label>Dry Run</label>
+    <type>Checkbox</type>
+</CustomField>

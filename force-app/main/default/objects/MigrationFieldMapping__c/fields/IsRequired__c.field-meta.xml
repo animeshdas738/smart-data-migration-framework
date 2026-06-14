@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsRequired__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Pre-validation raises a RequiredFieldMissing error if the source value is null or empty after DefaultValue is applied. Set true for fields that are required by validation rules even if not system-required.</description>
+    <externalId>false</externalId>
+    <label>Is Required</label>
+    <type>Checkbox</type>
+</CustomField>

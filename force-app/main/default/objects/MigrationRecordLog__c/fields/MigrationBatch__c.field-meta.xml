@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MigrationBatch__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Which batch produced this log entry. Used to correlate rollback log entries with batch execution records during post-migration analysis.</description>
+    <externalId>false</externalId>
+    <label>Migration Batch</label>
+    <referenceTo>MigrationBatch__c</referenceTo>
+    <relationshipLabel>Migration Record Logs</relationshipLabel>
+    <relationshipName>MigrationRecordLogsBatch</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

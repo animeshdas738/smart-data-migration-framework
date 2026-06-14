@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsExternalIdField__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True when this field is the configured upsert key for the parent object config. Validated as unique in insert mode by the duplicate detector.</description>
+    <externalId>false</externalId>
+    <label>Is External ID Field</label>
+    <type>Checkbox</type>
+</CustomField>

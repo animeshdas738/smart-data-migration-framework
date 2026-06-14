@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DefaultBatchSize__c</fullName>
+    <description>Default number of rows per DML batch. Applied to new MigrationJob records when BatchSize is not explicitly set. Hard cap at 200 enforced by the framework at runtime.</description>
+    <externalId>false</externalId>
+    <label>Default Batch Size</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+</CustomField>

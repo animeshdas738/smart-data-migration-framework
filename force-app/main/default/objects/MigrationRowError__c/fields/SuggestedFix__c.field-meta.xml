@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SuggestedFix__c</fullName>
+    <description>Framework-generated remediation hint. Examples: "Allowed picklist values: Active, Inactive, Pending" | "Maximum length: 80 characters. Current length: 124" | "Parent Account with Legacy ID ACC-001 not found in MigrationRecordLog"</description>
+    <externalId>false</externalId>
+    <label>Suggested Fix</label>
+    <length>1000</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

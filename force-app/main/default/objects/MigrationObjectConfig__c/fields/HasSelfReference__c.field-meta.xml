@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HasSelfReference__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Set by the relationship resolver when this object has a lookup back to itself (e.g. Contact.ReportsToId, Account.ParentId). Triggers the two-pass load strategy.</description>
+    <externalId>false</externalId>
+    <label>Has Self Reference</label>
+    <type>Checkbox</type>
+</CustomField>

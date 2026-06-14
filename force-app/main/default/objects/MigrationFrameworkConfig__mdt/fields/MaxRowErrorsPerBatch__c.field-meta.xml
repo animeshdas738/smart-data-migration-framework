@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MaxRowErrorsPerBatch__c</fullName>
+    <description>Maximum number of MigrationRowError__c records written per batch. If a catastrophically bad batch would exceed this, errors beyond the threshold are summarised in BatchError rather than written individually. Prevents runaway DML on extremely dirty data. Default 500.</description>
+    <externalId>false</externalId>
+    <label>Max Row Errors Per Batch</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+</CustomField>

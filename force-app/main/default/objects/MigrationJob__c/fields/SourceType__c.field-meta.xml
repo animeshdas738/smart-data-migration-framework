@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SourceType__c</fullName>
+    <externalId>false</externalId>
+    <label>Source Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CSV</fullName>
+                <default>true</default>
+                <label>CSV / Excel</label>
+            </value>
+            <value>
+                <fullName>LegacyCRM</fullName>
+                <default>false</default>
+                <label>Legacy CRM</label>
+            </value>
+            <value>
+                <fullName>REST_API</fullName>
+                <default>false</default>
+                <label>External REST API</label>
+            </value>
+            <value>
+                <fullName>SalesforceOrg</fullName>
+                <default>false</default>
+                <label>Another Salesforce Org</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

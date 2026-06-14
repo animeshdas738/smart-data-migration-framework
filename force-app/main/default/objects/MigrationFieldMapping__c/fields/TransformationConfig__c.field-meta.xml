@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TransformationConfig__c</fullName>
+    <description>JSON config for the selected TransformationType. Examples — PicklistMap: {"New":"New_Lead","Active":"Active__c"} | DateFormat: {"from":"MM/DD/YYYY","to":"YYYY-MM-DD"} | StaticValue: {"value":"Standard"} | Truncate: {"maxLength":255}</description>
+    <externalId>false</externalId>
+    <label>Transformation Config</label>
+    <length>4096</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

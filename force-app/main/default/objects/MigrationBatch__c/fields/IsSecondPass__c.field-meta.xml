@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsSecondPass__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True for batches that perform the self-referential field backfill (pass 2 of the two-pass strategy). These batches run Database.update only and populate the self-reference lookup using completed MigrationRecordLog entries.</description>
+    <externalId>false</externalId>
+    <label>Is Second Pass</label>
+    <type>Checkbox</type>
+</CustomField>

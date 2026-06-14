@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllowPartialSuccess__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Maps to allOrNone=false in Database DML calls. When true, a failed row does not roll back the entire batch. Default true — set false only for objects requiring atomic all-or-nothing loads.</description>
+    <externalId>false</externalId>
+    <label>Allow Partial Success</label>
+    <type>Checkbox</type>
+</CustomField>

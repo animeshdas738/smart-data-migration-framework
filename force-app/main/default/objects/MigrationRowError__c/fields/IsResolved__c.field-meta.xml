@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsResolved__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Client marks this true after fixing the source data. Used to filter the error report on re-run — only unresolved errors are shown in the pre-flight report.</description>
+    <externalId>false</externalId>
+    <label>Is Resolved</label>
+    <type>Checkbox</type>
+</CustomField>

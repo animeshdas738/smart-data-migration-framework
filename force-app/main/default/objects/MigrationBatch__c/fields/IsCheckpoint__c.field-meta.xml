@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsCheckpoint__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True on the most recently committed batch. When a job restarts, the engine queries for the batch where IsCheckpoint=true to determine the resume point. Only one batch per job should have this set at any time.</description>
+    <externalId>false</externalId>
+    <label>Is Checkpoint</label>
+    <type>Checkbox</type>
+</CustomField>

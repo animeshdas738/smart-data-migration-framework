@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ErrorMessage__c</fullName>
+    <description>Full Salesforce error string or framework-generated validation message. For DML errors this is Database.Error.getMessage(). For pre-validation errors this is the framework message.</description>
+    <externalId>false</externalId>
+    <label>Error Message</label>
+    <length>4096</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

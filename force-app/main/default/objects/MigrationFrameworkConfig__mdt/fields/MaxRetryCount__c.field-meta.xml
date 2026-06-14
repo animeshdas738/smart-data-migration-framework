@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MaxRetryCount__c</fullName>
+    <description>Maximum number of retry attempts for a single failed batch before the engine halts and sets the batch Status to Failed. Default 3.</description>
+    <externalId>false</externalId>
+    <label>Max Retry Count</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+</CustomField>

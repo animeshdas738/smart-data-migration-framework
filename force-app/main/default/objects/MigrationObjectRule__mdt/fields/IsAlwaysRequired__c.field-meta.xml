@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsAlwaysRequired__c</fullName>
+    <description>When true, the resolver enforces this ordering even if the parent object is not explicitly included in the migration scope. Used for objects where the dependency is implicit (e.g. PricebookEntry always requires both Pricebook2 and Product2).</description>
+    <externalId>false</externalId>
+    <defaultValue>false</defaultValue>
+    <label>Always Required</label>
+    <type>Checkbox</type>
+</CustomField>

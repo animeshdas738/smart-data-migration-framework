@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ObjectApiName__c</fullName>
+    <description>Salesforce API name of the object being migrated. Must exactly match the SObject API name (e.g. Account, Contact, MyCustomObject__c).</description>
+    <externalId>false</externalId>
+    <label>Object API Name</label>
+    <length>80</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DefaultValue__c</fullName>
+    <description>Applied to the source row when the source value is blank or null. Applied before the IsRequired check and before transformation.</description>
+    <externalId>false</externalId>
+    <label>Default Value</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Org-wide framework defaults. Deploy-time configuration for batch size, retry limits, Platform Cache settings, and error thresholds.</description>
+    <label>Migration Framework Config</label>
+    <pluralLabel>Migration Framework Configs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

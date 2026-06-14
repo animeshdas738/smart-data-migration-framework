@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllowPartialSuccess__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Object-level override for allOrNone DML behaviour. Inherits from MigrationJob when not explicitly set.</description>
+    <externalId>false</externalId>
+    <label>Allow Partial Success</label>
+    <type>Checkbox</type>
+</CustomField>

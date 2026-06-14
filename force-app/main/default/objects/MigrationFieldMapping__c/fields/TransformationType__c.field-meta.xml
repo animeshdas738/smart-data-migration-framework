@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TransformationType__c</fullName>
+    <externalId>false</externalId>
+    <label>Transformation Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct</fullName>
+                <default>true</default>
+                <label>Direct (copy as-is)</label>
+            </value>
+            <value>
+                <fullName>StaticValue</fullName>
+                <default>false</default>
+                <label>Static Value</label>
+            </value>
+            <value>
+                <fullName>DateFormat</fullName>
+                <default>false</default>
+                <label>Date Format Conversion</label>
+            </value>
+            <value>
+                <fullName>PicklistMap</fullName>
+                <default>false</default>
+                <label>Picklist Value Map</label>
+            </value>
+            <value>
+                <fullName>Concatenate</fullName>
+                <default>false</default>
+                <label>Concatenate Fields</label>
+            </value>
+            <value>
+                <fullName>Truncate</fullName>
+                <default>false</default>
+                <label>Truncate to Length</label>
+            </value>
+            <value>
+                <fullName>Nullify</fullName>
+                <default>false</default>
+                <label>Always Null</label>
+            </value>
+            <value>
+                <fullName>ExternalIdLookup</fullName>
+                <default>false</default>
+                <label>External ID Lookup (parent FK)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

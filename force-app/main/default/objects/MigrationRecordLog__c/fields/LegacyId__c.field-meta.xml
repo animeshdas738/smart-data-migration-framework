@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LegacyId__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Source system identifier for this record. Indexed as an External ID to enable fast lookup during parent FK resolution. Not enforced as unique because the same legacy ID value can appear across different object types.</description>
+    <externalId>true</externalId>
+    <label>Legacy ID</label>
+    <length>255</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

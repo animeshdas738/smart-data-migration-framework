@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConfigJSON__c</fullName>
+    <description>Extended job-level configuration stored as JSON. Use for source credentials hash, rate limit settings, retry policy overrides, and other properties not represented as first-class fields.</description>
+    <externalId>false</externalId>
+    <label>Config JSON</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

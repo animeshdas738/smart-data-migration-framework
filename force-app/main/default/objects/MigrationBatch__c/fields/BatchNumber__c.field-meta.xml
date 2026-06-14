@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BatchNumber__c</fullName>
+    <description>1-based sequence number of this batch within its parent object config. Batch 1 processes rows 1–200, Batch 2 processes rows 201–400, etc.</description>
+    <externalId>false</externalId>
+    <label>Batch Number</label>
+    <precision>5</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
