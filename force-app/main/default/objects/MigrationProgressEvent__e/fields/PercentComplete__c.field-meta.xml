@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PercentComplete__c</fullName>
+    <description>LoadedCount / TotalRecords * 100, pre-computed by MigrationProgressPublisher so the subscriber never needs a SOQL query to render the progress bar.</description>
+    <label>Percent Complete</label>
+    <precision>5</precision>
+    <scale>2</scale>
+    <type>Number</type>
+</CustomField>

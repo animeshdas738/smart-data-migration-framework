@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EstimatedCompletionAt__c</fullName>
+    <description>ETA derived from current batch throughput rate. Null for the first batch when no rate baseline exists yet.</description>
+    <label>Estimated Completion</label>
+    <type>DateTime</type>
+</CustomField>

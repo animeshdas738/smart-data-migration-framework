@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PayloadJson__c</fullName>
+    <description>JSON-serialized array of source row maps (List&lt;Map&lt;String,Object&gt;&gt;) for this batch. Read by MigrationBatchExecutor at execution time. Max 131,072 characters covers ~200 rows of typical CRM data.</description>
+    <externalId>false</externalId>
+    <label>Payload JSON</label>
+    <length>131072</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LoadedCount__c</fullName>
+    <description>Cumulative count of records successfully inserted or upserted across all batches up to this point.</description>
+    <label>Loaded Count</label>
+    <precision>18</precision>
+    <scale>0</scale>
+    <type>Number</type>
+</CustomField>

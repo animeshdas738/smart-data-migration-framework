@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrentObjectName__c</fullName>
+    <description>API name of the Salesforce object currently being loaded (e.g. Account, Contact). Displayed in the dashboard status line.</description>
+    <label>Current Object Name</label>
+    <length>255</length>
+    <type>Text</type>
+</CustomField>

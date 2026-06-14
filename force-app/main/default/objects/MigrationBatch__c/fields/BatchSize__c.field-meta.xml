@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BatchSize__c</fullName>
+    <description>Number of source rows included in this batch's PayloadJson__c. Set at batch-creation time; used by the ETA calculator for throughput estimation.</description>
+    <externalId>false</externalId>
+    <label>Batch Size</label>
+    <precision>6</precision>
+    <scale>0</scale>
+    <type>Number</type>
+</CustomField>

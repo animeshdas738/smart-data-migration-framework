@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ErrorMessage__c</fullName>
+    <description>Populated when the job transitions to Failed state. Contains the resolver error or unhandled exception message.</description>
+    <externalId>false</externalId>
+    <label>Error Message</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>
