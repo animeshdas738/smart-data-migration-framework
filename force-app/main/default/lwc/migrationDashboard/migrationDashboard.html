@@ -1,0 +1,97 @@
+<template>
+    <lightning-card title="Migration Dashboard" icon-name="standard:data_streams">
+        <div slot="actions">
+            <lightning-button label="Refresh" icon-name="utility:refresh" onclick={handleRefresh}></lightning-button>
+        </div>
+
+        <div class="slds-card__body slds-card__body_inner">
+
+            <!-- Error banner -->
+            <template if:true={hasError}>
+                <div class="slds-notify slds-notify_alert slds-theme_error" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    {error}
+                </div>
+            </template>
+
+            <!-- Empty state -->
+            <template if:false={hasJobs}>
+                <div class="slds-illustration slds-illustration_small slds-p-around_large">
+                    <p class="slds-text-color_weak slds-text-align_center">No active migration jobs.</p>
+                </div>
+            </template>
+
+            <!-- Job cards -->
+            <template if:true={hasJobs}>
+                <template for:each={jobs} for:item="job">
+                    <div key={job.Id} class="slds-box slds-m-bottom_small">
+
+                        <!-- Header row -->
+                        <div class="slds-grid slds-gutters slds-grid_vertical-align-center slds-m-bottom_x-small">
+                            <div class="slds-col">
+                                <span class="slds-text-heading_small slds-m-right_x-small">{job.JobName__c}</span>
+                                <span class={job.statusClass}>{job.Status__c}</span>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4 slds-text-align_right">
+                                <template if:true={job.canCancel}>
+                                    <lightning-button
+                                        label="Cancel"
+                                        variant="destructive-text"
+                                        data-jobid={job.Id}
+                                        onclick={handleCancel}
+                                        class="slds-m-right_x-small">
+                                    </lightning-button>
+                                </template>
+                                <template if:true={job.canRollback}>
+                                    <lightning-button
+                                        label="Rollback"
+                                        variant="neutral"
+                                        data-jobid={job.Id}
+                                        onclick={handleRollback}>
+                                    </lightning-button>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Progress bar -->
+                        <div class="slds-progress-bar slds-progress-bar_circular slds-m-bottom_x-small" role="progressbar"
+                             aria-valuemin="0" aria-valuemax="100">
+                            <span class="slds-progress-bar__value" style={job.progressStyle}>
+                                <span class="slds-assistive-text">{job.progressLabel}</span>
+                            </span>
+                        </div>
+
+                        <!-- Stats row -->
+                        <div class="slds-grid slds-gutters slds-text-body_small slds-text-color_weak">
+                            <div class="slds-col">
+                                <lightning-icon icon-name="utility:check" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                {job.LoadedCount__c} loaded
+                            </div>
+                            <div class="slds-col">
+                                <lightning-icon icon-name="utility:error" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                {job.FailedCount__c} failed
+                            </div>
+                            <div class="slds-col">
+                                <lightning-icon icon-name="utility:layers" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                {job.TotalRecords__c} total
+                            </div>
+                            <div class="slds-col">
+                                <template if:true={job.CurrentObject__c}>
+                                    <lightning-icon icon-name="utility:database" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                                    {job.CurrentObject__c}
+                                </template>
+                            </div>
+                            <div class="slds-col slds-text-align_right">
+                                <template if:true={job.EstimatedCompletionAt__c}>
+                                    ETA: {job.EstimatedCompletionAt__c}
+                                </template>
+                            </div>
+                        </div>
+
+                    </div>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

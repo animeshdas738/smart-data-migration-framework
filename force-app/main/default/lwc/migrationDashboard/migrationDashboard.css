@@ -1,0 +1,9 @@
+.status-running {
+    background-color: #0070d2;
+    color: #fff;
+}
+
+.slds-progress-bar__value {
+    background-color: #0070d2;
+    transition: width 0.4s ease;
+}

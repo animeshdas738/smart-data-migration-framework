@@ -1,0 +1,160 @@
+<template>
+    <lightning-card title="New Migration Job" icon-name="standard:data_model">
+        <div class="slds-card__body slds-card__body_inner">
+
+            <!-- Step indicator -->
+            <div class="slds-progress slds-progress_shade slds-m-bottom_medium">
+                <ol class="slds-progress__list">
+                    <template for:each={progressSteps} for:item="step">
+                        <li key={step.value}
+                            class={step.cssClass}>
+                            <button class="slds-button slds-progress__marker" type="button">
+                                <span class="slds-assistive-text">{step.label}</span>
+                            </button>
+                            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                                <span class="slds-text-body_small">{step.label}</span>
+                            </div>
+                        </li>
+                    </template>
+                </ol>
+            </div>
+
+            <!-- Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <!-- Step 0: Job details -->
+            <template if:true={isStep0}>
+                <lightning-input label="Job Name" value={jobName} onchange={handleJobName}
+                    class="slds-m-bottom_small" required></lightning-input>
+                <lightning-input type="checkbox" label="Dry Run (validate only — no DML)"
+                    checked={isDryRun} onchange={handleDryRun}
+                    class="slds-m-bottom_medium"></lightning-input>
+                <lightning-button variant="brand" label="Next: Objects" onclick={handleNextFromJob}></lightning-button>
+            </template>
+
+            <!-- Step 1: Object configs -->
+            <template if:true={isStep1}>
+                <p class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">
+                    Add each Salesforce object to migrate. The framework will resolve load order automatically.
+                </p>
+                <template for:each={objectRows} for:item="row">
+                    <div key={row.id} class="slds-grid slds-gutters slds-grid_vertical-align-end slds-m-bottom_x-small">
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-input label="Object API Name" value={row.apiName}
+                                data-rowid={row.id} data-field="apiName"
+                                onchange={handleObjectField} placeholder="e.g. Account"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-input label="External ID Field (upsert)" value={row.externalIdField}
+                                data-rowid={row.id} data-field="externalIdField"
+                                onchange={handleObjectField} placeholder="e.g. Legacy_Id__c"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_2-of-12">
+                            <lightning-input type="number" label="Load Order" value={row.loadOrder}
+                                data-rowid={row.id} data-field="loadOrder"
+                                onchange={handleObjectField} min="1"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_2-of-12">
+                            <lightning-button-icon icon-name="utility:delete" variant="bare"
+                                data-rowid={row.id} onclick={handleRemoveObject}
+                                alternative-text="Remove"></lightning-button-icon>
+                        </div>
+                    </div>
+                </template>
+                <lightning-button label="+ Add Object" onclick={handleAddObject}
+                    class="slds-m-bottom_medium"></lightning-button>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-button label="Back" onclick={handleBack}></lightning-button>
+                    </div>
+                    <div class="slds-col slds-text-align_right">
+                        <lightning-button variant="brand" label="Next: Field Mappings"
+                            onclick={handleNextFromObjects}></lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 2: Field mappings -->
+            <template if:true={isStep2}>
+                <p class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">
+                    Map source fields to target Salesforce fields. Mark lookups so the framework translates legacy IDs.
+                </p>
+                <template for:each={fieldRows} for:item="row">
+                    <div key={row.id} class="slds-grid slds-gutters slds-grid_vertical-align-end slds-m-bottom_x-small">
+                        <div class="slds-col slds-size_2-of-12">
+                            <lightning-combobox label="Object" value={row.configApiName}
+                                options={objectOptions}
+                                data-rowid={row.id} data-field="configApiName"
+                                onchange={handleFieldChange} placeholder="Object"></lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <lightning-input label="Source Field" value={row.source}
+                                data-rowid={row.id} data-field="source"
+                                onchange={handleFieldChange} placeholder="e.g. Account_Id__c"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <lightning-input label="Target Field" value={row.target}
+                                data-rowid={row.id} data-field="target"
+                                onchange={handleFieldChange} placeholder="e.g. AccountId"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12">
+                            <lightning-input type="checkbox" label="Lookup?"
+                                checked={row.isLookup}
+                                data-rowid={row.id} data-field="isLookup"
+                                onchange={handleFieldChange}></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_2-of-12">
+                            <template if:true={row.isLookup}>
+                                <lightning-input label="Parent Object" value={row.parentObj}
+                                    data-rowid={row.id} data-field="parentObj"
+                                    onchange={handleFieldChange} placeholder="e.g. Account"></lightning-input>
+                            </template>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12">
+                            <lightning-button-icon icon-name="utility:delete" variant="bare"
+                                data-rowid={row.id} onclick={handleRemoveField}
+                                alternative-text="Remove"></lightning-button-icon>
+                        </div>
+                    </div>
+                </template>
+                <lightning-button label="+ Add Field" onclick={handleAddField}
+                    class="slds-m-bottom_medium"></lightning-button>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-button label="Back" onclick={handleBack}></lightning-button>
+                    </div>
+                    <div class="slds-col slds-text-align_right">
+                        <lightning-button variant="brand" label="Next: Review"
+                            onclick={handleNextFromFields}></lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Step 3: Review & launch -->
+            <template if:true={isStep3}>
+                <div class="slds-box slds-theme_shade slds-m-bottom_medium">
+                    <p><strong>Job:</strong> {reviewSummary.jobName}</p>
+                    <p><strong>Mode:</strong>
+                        <template if:true={reviewSummary.isDryRun}>Dry Run (validate only)</template>
+                        <template if:false={reviewSummary.isDryRun}>Live Migration</template>
+                    </p>
+                    <p><strong>Objects:</strong> {reviewSummary.objects}</p>
+                    <p><strong>Field Mappings:</strong> {reviewSummary.fields}</p>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-button label="Back" onclick={handleBack}></lightning-button>
+                    </div>
+                    <div class="slds-col slds-text-align_right">
+                        <lightning-button variant="brand"
+                            label={launchLabel}
+                            onclick={handleLaunch}></lightning-button>
+                    </div>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
